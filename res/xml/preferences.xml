@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <EditTextPreference
+        android:key="etp_FrameRate"
+        android:summary="@string/frame_rate_value_default"
+        android:title="@string/frame_rate"
+        android:defaultValue="1"/>
+
+    <ListPreference
+        android:key="lp_CaptureSize"
+        android:entries="@array/capture_size"
+        android:entryValues="@array/caputre_size_value"
+        android:summary="720p"
+        android:title="@string/capture_size" />
+
+    <EditTextPreference android:title="@string/capture_abouttime" />
+
+    <ListPreference
+        android:entries="@array/capture_size"
+        android:entryValues="@array/caputre_size_value"
+        android:summary="直接输出视频"
+        android:title="@string/capture_size" />
+
+    <PreferenceScreen android:title="@string/capture_more" >
+        <PreferenceCategory android:title="@string/capture_notification" >
+            <SwitchPreference android:title="@string/capture_notification_alarm" />
+            <SwitchPreference android:title="@string/capture_notification_message" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="@string/capture_output_name" >
+            <EditTextPreference
+                android:summary="default"
+                android:title="@string/capture_output_filename" />
+            <EditTextPreference 
+                android:title="@string/capture_output_frame_rate"
+                android:summary="default"/>
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+</PreferenceScreen>

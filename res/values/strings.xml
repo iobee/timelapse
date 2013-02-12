@@ -5,4 +5,17 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
 
+    <!-- setting config -->
+    <string name="frame_rate">帧率</string>
+    <string name="frame_rate_value_default">1s</string>
+    <string name="capture_size">录制大小</string>
+    <string name="capture_abouttime">拍摄时长</string>
+    <string name="capture_output_filename">文件名</string>
+    <string name="capture_output_name">输出</string>
+    <string name="capture_notification">通知</string>
+    <string name="capture_notification_alarm">闹玲</string>
+    <string name="capture_notification_message">短信</string>
+    <string name="capture_output_format">输出格式</string>
+    <string name="capture_output_frame_rate">生成视频码率</string>
+    <string name="capture_more">更多</string>
 </resources>
