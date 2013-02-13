@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.PopupMenu;
 import android.widget.Spinner;
 
 public class SettingActivity extends Activity {
@@ -45,5 +47,19 @@ public class SettingActivity extends Activity {
 		Intent i = new Intent(this, CameraActivity.class);
 		startActivity(i);
 		return true;
+	}
+	
+	public void showMenu(View v){
+		PopupMenu popup = new PopupMenu(this, v);
+		popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+			
+			@Override
+			public boolean onMenuItemClick(MenuItem item) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+		});
+		popup.inflate(R.menu.menu_choose);
+		popup.show();
 	}
 }

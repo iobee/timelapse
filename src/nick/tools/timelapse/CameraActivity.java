@@ -16,6 +16,8 @@ import android.hardware.Camera.Parameters;
 import android.hardware.Camera.PictureCallback;
 import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -32,6 +34,7 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.PopupMenu;
 import android.widget.SimpleAdapter;
 
 public class CameraActivity extends Activity {
@@ -106,6 +109,7 @@ public class CameraActivity extends Activity {
 				// TODO Auto-generated method stub
 				//startCaptureAsMP4();
 				startCaptureAsTGA();
+				//alarmRingtone();
 			}
 		});
 	}
@@ -295,19 +299,38 @@ public class CameraActivity extends Activity {
 
 	private void startCaptureAsTGA() {
 		if (!isRecoding) {
-			myHandler.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					// TODO Auto-generated method stub
-					mCamera.takePicture(null, null, mPicture);
-					myHandler.postDelayed(this, 1000);
-				}
-			}, 1000);
+			myHandler.postDelayed(myRunable, 1000);
 			isRecoding = true;
 		} else {
 			isRecoding = false;
-			myHandler.removeCallbacks(null, null);
+			myHandler.removeCallbacks(myRunable);
 		}
 	}
+	
+	private Runnable myRunable = new Runnable() {
+		
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			mCamera.takePicture(null, null, mPicture);
+			myHandler.postDelayed(this, 1000);
+		}
+	};
+	
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		Log.i(TAG, "-->onStop");
+		alarmRingtone();
+	}
+
+	private void alarmRingtone() {
+		Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
+		Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+		r.play();
+	}
+	
+	
 
 }

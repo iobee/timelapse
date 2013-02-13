@@ -7,7 +7,8 @@
     <ImageView 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/timelapse_chose"/>
+        android:src="@drawable/timelapse_chose"
+        android:onClick="showMenu"/>
     <fragment class="nick.tools.timelapse.fragment.SettingPreferenceFragment"
         android:id="@+id/Fragment_Setting"
         android:layout_width="match_parent"

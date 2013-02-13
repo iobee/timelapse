@@ -5,7 +5,8 @@
         android:key="etp_FrameRate"
         android:summary="@string/frame_rate_value_default"
         android:title="@string/frame_rate"
-        android:defaultValue="1"/>
+        android:defaultValue="1"
+        android:inputType="numberDecimal"/>
 
     <ListPreference
         android:key="lp_CaptureSize"
@@ -17,10 +18,11 @@
     <EditTextPreference android:title="@string/capture_abouttime" />
 
     <ListPreference
-        android:entries="@array/capture_size"
-        android:entryValues="@array/caputre_size_value"
+        android:key="lp_CaptureOutput"
+        android:entries="@array/capture_format"
+        android:entryValues="@array/capture_format_value"
         android:summary="直接输出视频"
-        android:title="@string/capture_size" />
+        android:title="@string/capture_output_format" />
 
     <PreferenceScreen android:title="@string/capture_more" >
         <PreferenceCategory android:title="@string/capture_notification" >

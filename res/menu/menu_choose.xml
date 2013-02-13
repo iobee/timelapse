@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/menu_cloud"
+        android:title="云彩"></item>
+    <item android:id="@+id/menu_eatting"
+        android:title="吃飯"></item>
+    <item android:id="@+id/menu_sunrise"
+        android:title="日出"></item>
+    
+
+</menu>

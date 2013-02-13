@@ -17,5 +17,7 @@
     <string name="capture_notification_message">短信</string>
     <string name="capture_output_format">输出格式</string>
     <string name="capture_output_frame_rate">生成视频码率</string>
+    <string name="capture_output_asvideo">直接输出视频</string>
+    <string name="capture_output_astga">JPG序列输出</string>
     <string name="capture_more">更多</string>
 </resources>
